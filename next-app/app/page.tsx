@@ -1,4 +1,5 @@
-import { Home as HomeIcon, Search, Library } from "lucide-react"; 
+import { Home as HomeIcon, Search, Library, ChevronLeft, ChevronRight } from "lucide-react"; 
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -30,8 +31,50 @@ export default function Home() {
             <a href="" className="text-sm transition ease  text-zinc-500 hover:text-zinc-100">Top 40 Hits</a>
           </nav>
         </aside>
-        <main className="flex-1 p-6">
-          main
+        <main className="flex-1 p-6 overflow-y-auto">
+          <div className="flex items-center gap-5">
+            <button>
+              <ChevronLeft  className="rounded-full bg-black/40 p-1"/>
+            </button>
+            <button>
+              <ChevronRight className="rounded-full bg-black/40 p-1" />
+            </button>
+          </div>
+
+          <h1 className="mt-5 text-3xl font-semibold">Good morning</h1>
+
+          <div className="grid grid-cols-3 mt-5 gap-x-5 gap-y-3">
+            <a href="" className="bg-white/10 rounded ">
+             <Image src="/tame-impala.jpg" width={80} height={80} alt=""></Image>
+            </a>
+            <a href="" className="bg-white/10 rounded ">
+             <Image src="/tame-impala.jpg" width={80} height={80} alt=""></Image>
+            </a>
+            <a href="" className="bg-white/10 rounded ">
+             <Image src="/tame-impala.jpg" width={80} height={80} alt=""></Image>
+            </a>
+            <a href="" className="bg-white/10 rounded ">
+             <Image src="/tame-impala.jpg" width={80} height={80} alt=""></Image>
+            </a>
+            <a href="" className="bg-white/10 rounded ">
+             <Image src="/tame-impala.jpg" width={80} height={80} alt=""></Image>
+            </a>
+            <a href="" className="bg-white/10 rounded ">
+             <Image src="/tame-impala.jpg" width={80} height={80} alt=""></Image>
+            </a>
+          </div>
+
+          <h1 className="mt-10 text-2xl font-semibold">Mixs for you</h1>
+
+          <div className="grid grid-cols-4 mt-5 gap-x-5 gap-y-3">
+            <div className="bg-white/10 p-5">teste</div>
+            <div className="bg-white/10 p-5">teste</div>
+            <div className="bg-white/10 p-5">teste</div>
+            <div className="bg-white/10 p-5">teste</div>
+            <div className="bg-white/10 p-5">teste</div>
+            <div className="bg-white/10 p-5">teste</div>
+            <div className="bg-white/10 p-5">teste</div>
+          </div>
         </main>
       </div>
       <footer className="bg-zinc-800 border-t border-zinc-700 p-6">
