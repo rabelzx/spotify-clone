@@ -1,7 +1,28 @@
 import { Home as HomeIcon, Search, Library, ChevronLeft, ChevronRight, Play } from "lucide-react"; 
 import Image from "next/image";
 
+function Playlist({ src }) {
+  return  <div className="bg-white/10 flex group rounded overflow:hidden items-center gap-4  hover:bg-white/20 transition-colors">
+            <Image src={src} width={100} height={100} alt=""></Image>
+            <strong>Tame Impala</strong>
+            <button className="rounded-full bg-green-400 p-3 text-black ml-auto mr-8 invisible group-hover:visible"><Play/></button>
+          </div>
+}
+
+function Mix() {
+  return <div className="bg-white/5 p-4 flex flex-col gap-2 rounded hover:bg-white/10">
+            <Image src="/tame-impala.jpg" className="w-full" width={120} height={120} alt=""></Image>
+            <strong className="font-semibold">Daily Mix 1</strong>
+            <span className="text-sm text-zinc-400">Avenged Senfold, System of Down and More!  </span>
+          </div>
+}
+
 export default function Home() {
+  const playlists = [
+    {src: "/tame-impala.jpg"}, 
+    {src: "/avenged-senfold.jpg"} 
+  ]
+  
   return (
     <div className="h-screen flex flex-col">
       <div className="flex flex-1">
@@ -40,80 +61,22 @@ export default function Home() {
               <ChevronRight className="rounded-full bg-black/40 p-1" />
             </button>
           </div>
-
           <h1 className="mt-5 text-3xl font-semibold">Good morning</h1>
-
           <div className="grid grid-cols-3 mt-5 gap-4">
-            <div className="bg-white/10 flex group rounded overflow:hidden items-center gap-4  hover:bg-white/20 transition-colors">
-             <Image src="/tame-impala.jpg" width={100} height={100} alt=""></Image>
-             <strong>Tame Impala</strong>
-             <button className="rounded-full bg-green-400 p-3 text-black ml-auto mr-8 invisible group-hover:visible"><Play/></button>
-            </div>
-            <div className="bg-white/10 flex group rounded overflow:hidden items-center gap-4  hover:bg-white/20 transition-colors">
-             <Image src="/tame-impala.jpg" width={100} height={100} alt=""></Image>
-             <strong>Tame Impala</strong>
-              <button className="rounded-full bg-green-400 p-3 text-black ml-auto mr-8 invisible group-hover:visible"><Play/></button>
-            </div>
-            <div className="bg-white/10 flex group rounded overflow:hidden items-center gap-4  hover:bg-white/20 transition-colors">
-             <Image src="/tame-impala.jpg" width={100} height={100} alt=""></Image>
-             <strong>Tame Impala</strong>
-              <button className="rounded-full bg-green-400 p-3 text-black ml-auto mr-8 invisible group-hover:visible"><Play/></button>
-            </div>
-            <div className="bg-white/10 flex group rounded overflow:hidden items-center gap-4  hover:bg-white/20 transition-colors">
-             <Image src="/tame-impala.jpg" width={100} height={100} alt=""></Image>
-             <strong>Tame Impala</strong>
-              <button className="rounded-full bg-green-400 p-3 text-black ml-auto mr-8 invisible group-hover:visible"><Play/></button>
-            </div>
-            <div className="bg-white/10 flex group rounded overflow:hidden items-center gap-4  hover:bg-white/20 transition-colors">
-             <Image src="/tame-impala.jpg" width={100} height={100} alt=""></Image>
-             <strong>Tame Impala</strong>
-              <button className="rounded-full bg-green-400 p-3 text-black ml-auto mr-8 invisible group-hover:visible"><Play/></button>
-            </div>
-            <div className="bg-white/10 flex group rounded overflow:hidden items-center gap-4 hover:bg-white/20 transition-colors">  
-             <Image src="/tame-impala.jpg" width={100} height={100} alt=""></Image>
-             <strong>Tame Impala</strong>
-              <button className="rounded-full bg-green-400 p-3 text-black ml-auto mr-8 invisible group-hover:visible"><Play/></button>
-            </div>
+            {playlists.map((playlist, index) => (
+              <Playlist key={index} src={playlist.src}/>
+            ))}
           </div>
-
           <h1 className="mt-10 text-2xl font-semibold">Mixs for you</h1>
-
           <div className="grid grid-cols-8 mt-4 gap-4">
-            <div className="bg-white/5 p-4 flex flex-col gap-2 rounded hover:bg-white/10">
-              <Image src="/tame-impala.jpg" className="w-full" width={120} height={120} alt=""></Image>
-              <strong className="font-semibold">Daily Mix 1</strong>
-              <span className="text-sm text-zinc-400">Avenged Senfold, System of Down and More!  </span>
-            </div>
-            <div className="bg-white/5 p-4 flex flex-col gap-2 rounded hover:bg-white/10 transition-colors">
-              <Image src="/tame-impala.jpg" className="w-full" width={120} height={120} alt=""></Image>
-              <strong className="font-semibold">Daily Mix 1</strong>
-              <span className="text-sm text-zinc-400">Avenged Senfold, System of Down and More!  </span>
-            </div>
-            <div className="bg-white/5 p-4 flex flex-col gap-2 rounded hover:bg-white/10 transition-colors">
-              <Image src="/tame-impala.jpg" className="w-full" width={120} height={120} alt=""></Image>
-              <strong className="font-semibold">Daily Mix 1</strong>
-              <span className="text-sm text-zinc-400">Avenged Senfold, System of Down and More!  </span>
-            </div>
-            <div className="bg-white/5 p-4 flex flex-col gap-2 rounded hover:bg-white/10 transition-colors">
-              <Image src="/tame-impala.jpg" className="w-full" width={120} height={120} alt=""></Image>
-              <strong className="font-semibold">Daily Mix 1</strong>
-              <span className="text-sm text-zinc-400">Avenged Senfold, System of Down and More!  </span>
-            </div>
-            <div className="bg-white/5 p-4 flex flex-col gap-2 rounded hover:bg-white/10 transition-colors">
-              <Image src="/tame-impala.jpg" className="w-full" width={120} height={120} alt=""></Image>
-              <strong className="font-semibold">Daily Mix 1</strong>
-              <span className="text-sm text-zinc-400">Avenged Senfold, System of Down and More!  </span>
-            </div>
-            <div className="bg-white/5 p-4 flex flex-col gap-2 rounded hover:bg-white/10 transition-colors">
-              <Image src="/tame-impala.jpg" className="w-full" width={120} height={120} alt=""></Image>
-              <strong className="font-semibold">Daily Mix 1</strong>
-              <span className="text-sm text-zinc-400">Avenged Senfold, System of Down and More!  </span>
-            </div>
-            <div className="bg-white/5 p-4 flex flex-col gap-2 rounded hover:bg-white/10 transition-colors">
-              <Image src="/tame-impala.jpg" className="w-full" width={120} height={120} alt=""></Image>
-              <strong className="font-semibold">Daily Mix 1</strong>
-              <span className="text-sm text-zinc-400">Avenged Senfold, System of Down and More!  </span>
-            </div>
+            <Mix/>
+            <Mix/>
+            <Mix/>
+            <Mix/>
+            <Mix/>
+            <Mix/>
+            <Mix/>
+            <Mix/>
           </div>
         </main>
       </div>
